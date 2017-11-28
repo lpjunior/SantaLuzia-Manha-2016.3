@@ -14,6 +14,7 @@ public class Aplicativo {
 
 		// gerador de números aleatórios
 		Random gerador = new Random();
+
 		// Array de objetos
 		List<Compra> compras = new ArrayList<Compra>();
 
