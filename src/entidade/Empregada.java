@@ -11,7 +11,7 @@ public class Empregada {
 
 	@Override
 	public String toString() {
-		return "ID: " + id + "\tNome: " + nome;
+		return "\n\tID: " + id + "\n\tNome: " + nome;
 	}
 
 	public Long getId() {

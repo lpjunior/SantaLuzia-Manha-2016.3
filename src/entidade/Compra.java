@@ -6,10 +6,15 @@ public class Compra {
 
 	private Long id;
 	private Empregada empregada;
-	private List<Produto> listaDeCompras;
+	private List<Produto> listaDeProdutos;
 	
 	public Compra() {
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Compra:\nID: " + id + "\nEmpregada: " + empregada + "\nLista de produtos:\n" + listaDeProdutos;
 	}
 
 	public Long getId() {
@@ -28,12 +33,12 @@ public class Compra {
 		this.empregada = empregada;
 	}
 
-	public List<Produto> getListaDeCompras() {
-		return listaDeCompras;
+	public List<Produto> getListaDeProdutos() {
+		return listaDeProdutos;
 	}
 
-	public void setListaDeCompras(List<Produto> listaDeCompras) {
-		this.listaDeCompras = listaDeCompras;
+	public void setListaDeProdutos(List<Produto> listaDeProdutos) {
+		this.listaDeProdutos = listaDeProdutos;
 	}
 	
 	
