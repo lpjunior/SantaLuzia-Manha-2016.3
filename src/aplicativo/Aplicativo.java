@@ -55,7 +55,6 @@ public class Aplicativo {
 			System.out.println(compra);
 		}
 		
-		new DestruidorDeObjetos();
 		/* Destruindo o objeto */
 		DestruidorDeObjetos.setNull(compras);
 	}
