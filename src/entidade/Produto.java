@@ -13,7 +13,7 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "\tID: " + id + "\n\tNome: " + nmProduto + "\n\tQuantidade: " + quantidade + "\n\tPreço:"+ preco;
+		return "\tID: " + id + "\n\tNome: " + nmProduto + "\n\tQuantidade: " + quantidade + "kg\n\tPreço:"+ preco + "\n";
 	}
 
 	public Long getId() {
