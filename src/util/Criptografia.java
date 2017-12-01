@@ -15,7 +15,6 @@ public class Criptografia {
 		}
 		BigInteger hash = new BigInteger(1, md.digest(senha.getBytes()));
 		String senhaCripto = hash.toString(16);
-		System.out.println(senhaCripto);
 		return senhaCripto;
 	}
 }

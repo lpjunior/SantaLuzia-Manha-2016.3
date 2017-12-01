@@ -21,15 +21,15 @@ public class App {
 		c.setFormaPagamento(FormaPagamento.CARTAO);
 		c.setTipo(Tipo.PESSOA_FISICA);
 		
-		System.out.println(c.autentica("fulano", "123") ? "Login efetuado" : "Falha ao efetuar login");
+		System.out.println(c.autentica("fulano", "123") ? "Cliente: Login efetuado" : "Cliente: Falha ao efetuar login");
 		
 		f.setNome("José da Silva");
 		f.setEmail("jsilva@gmail.com");
 		f.setLogin("jsilva");
-		f.setSenha("2222");
+		f.setSenha(Criptografia.geraMD5("2222"));
 		f.setSetor("TI");
 		f.setCargo(Cargo.ANALISTA);
 		
-		System.out.println(f.autentica("jsilva", "222") ? "Login efetuado" : "Falha ao efetuar login");
+		System.out.println(f.autentica("jsilva", "222") ? "Funcionario: Login efetuado" : "Funcionario: Falha ao efetuar login");
 	}
 }

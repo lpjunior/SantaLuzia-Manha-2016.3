@@ -1,5 +1,6 @@
 package entidade;
 
+import util.Criptografia;
 import util.Login;
 
 public abstract class Pessoa implements Login {
@@ -47,9 +48,10 @@ public abstract class Pessoa implements Login {
 
 	@Override
 	public boolean autentica(String login, String senha) {
-		if ((this.login != login) && (this.senha != senha)) {
-			return false;
+		senha = Criptografia.geraMD5(senha);
+		if ((this.login.equalsIgnoreCase(login)) && (this.senha.equals(senha))) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 }
