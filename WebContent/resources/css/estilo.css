@@ -1,0 +1,74 @@
+/*@import url('https://fonts.googleapis.com/css?family=Pangolin');*/
+
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/miraculousechristmas.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas');
+
+#carousel{
+    margin-top: 3.70%;
+}
+
+h1 {
+    text-align: center;
+    color: orangered;
+    /*font-family: 'Pangolin', cursive;*/
+    font-family: myFont;
+    /*font-family: 'Mountains of Christmas', cursive;*/
+    font-size: 8em;
+    padding: 50px 0;
+}
+
+.features {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.features .fa {
+    font-size: 30px;
+    color: orangered;
+}
+
+.portfolio {
+    padding-bottom: 80px;
+}
+
+.contato {
+    background-color: #333338;
+    padding-bottom: 100px;
+    color: white !important;
+    text-align: center;
+    line-height: 10px;
+    font-size: 15px;
+}
+
+.contato h1 {
+    padding-bottom: 30px !important;
+}
+
+.contato p, .contato .fa {
+    cursor: pointer;
+}
+
+.contato p > a {
+    color: white;
+}
+
+.contato .fa {
+    font-size: 50px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.contato .fa:hover, .contato p:hover {
+    opacity: 0.5
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    background-color: brown;
+}
