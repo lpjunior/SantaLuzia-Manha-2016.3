@@ -18,6 +18,15 @@ public class Aluno implements Serializable {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Aluno \nID: " + id
+				+ "\nNome: " + nome
+				+ "\nEmail: " + email
+				+ "\nTelefone: " + telefone
+				+ "\nData Nascimento: " + dtNascimento;
+	}
+
 	public Long getId() {
 		return id;
 	}
