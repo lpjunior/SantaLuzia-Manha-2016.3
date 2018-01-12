@@ -26,6 +26,7 @@ public class ControllerAluno extends HttpServlet {
 
 		AlunoDAOImp daoImp = new AlunoDAOImp();
 		Aluno a = new Aluno();
+		
 		if (request.getServletPath().equals("/buscar")) {
 			// id, nome, email, vazio
 			if (request.getParameter("id") != null) {
@@ -67,11 +68,11 @@ public class ControllerAluno extends HttpServlet {
 			if (request.getParameter("id") != null) {
 
 				aluno.setId(Long.parseLong(request.getParameter("id")));
-				daoImp.editar(aluno);
-				response.getWriter().append(aluno.getNome()).append(" ").append("editado com sucesso.");
+				if(daoImp.editar(aluno))
+					response.getWriter().append(aluno.getNome()).append(" ").append("editado com sucesso.");
 			} else {
-				daoImp.cadastrar(aluno);
-				response.getWriter().append(aluno.getNome() + " cadastrado com sucesso.");
+				if(daoImp.cadastrar(aluno))
+					response.getWriter().append(aluno.getNome() + " cadastrado com sucesso.");
 			}
 		} else {
 			response.sendRedirect("404.html");
