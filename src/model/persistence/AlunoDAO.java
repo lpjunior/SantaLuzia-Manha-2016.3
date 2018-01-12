@@ -114,18 +114,18 @@ public class AlunoDAO extends ConnectionDAO {
 			String condicional = "";
 			
 			if(a.getNome() != null)
-				condicional = "where nome like %?%";
+				condicional = "where nome like ?";
 			
 			String sql = "select * from aluno " + condicional;
 			
 			stmt = conn.prepareStatement(sql);
 			
 			if(a.getNome() != null)
-				stmt.setString(1, a.getNome());
+				stmt.setString(1, "%" + a.getNome() + "%");
 			
 			rs = stmt.executeQuery();
 			
-			if(rs.next())
+			while(rs.next())
 				alunos.add(criaAluno(rs));
 			
 			return alunos;

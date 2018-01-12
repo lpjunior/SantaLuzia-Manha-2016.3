@@ -24,19 +24,26 @@ public class ControllerAluno extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		AlunoDAOImp daoImp = new AlunoDAOImp();
+		Aluno a = new Aluno();
 		if (request.getServletPath().equals("/buscar")) {
 			// id, nome, email, vazio
 			if (request.getParameter("id") != null) {
-				response.getWriter().append("Busca por id");
+				a.setId(Long.parseLong(request.getParameter("id")));
+				response.getWriter().append(daoImp.buscar(a).toString());
 			} else if (request.getParameter("nome") != null) {
-				response.getWriter().append("Busca por nome");
+				a.setNome(request.getParameter("nome"));
+				response.getWriter().append(daoImp.listar(a).toString());
 			} else if (request.getParameter("email") != null) {
-				response.getWriter().append("Busca por email");
+				a.setEmail(request.getParameter("email"));
+				response.getWriter().append(daoImp.buscar(a).toString());
 			} else {
-				response.getWriter().append("Busca todos\n");
+				response.getWriter().append(daoImp.listar(a).toString());
 			}
 		} else if (request.getServletPath().equals("/excluir")) {
-			response.getWriter().append("excluir aluno");
+			a.setId(Long.parseLong(request.getParameter("id")));
+			if(daoImp.excluir(a))
+				response.getWriter().append("aluno excluido com sucesso!");
 		} else {
 			response.sendRedirect("404.html");
 		}
