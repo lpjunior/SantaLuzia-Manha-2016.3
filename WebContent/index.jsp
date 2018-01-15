@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -29,34 +31,42 @@
 				<ul class="nav nav-pills">
 					<li role="presentation" class="active"><a href="#">Home</a></li>
 					<li role="presentation"><a href="#form1">Formulário</a></li>
-					<li role="presentation"><a href="#list1">Lista</a></li>
+					<li role="presentation"><a href="buscar#list1">Lista</a></li>
 				</ul>
 			</nav>
 		</div>
 		<section id="form1">
 			<div class="col-md-8 col-md-offset-2" style="margin-top: 5%">
 				<fieldset>
-					<legend>Cadastro de Alunos</legend>
+					<legend>Registro de Alunos</legend>
 					<form id="formulario" action="salvar" method="post">
 						<div class="form-group">
 							<label for="id_nome">Nome</label> <input type="text"
 								class="form-control" id="id_nome" name="nome"
-								 required>
+								value="${aluno.nome}" required>
 						</div>
 						<div class="form-group">
 							<label for="id_email">Email</label> <input type="email"
 								class="form-control" id="id_email" name="email"
-								 required>
+								value="${aluno.email}" required>
 						</div>
 						<div class="form-group">
 							<label for="id_tel">Telefone</label> <input type="tel"
 								class="form-control" id="id_tel" name="tel"
-								 required>
+								value="${aluno.telefone}" required>
 						</div>
 						<div class="form-group">
-							<label for="id_dtNasc">Data Nascimento</label> 
-							<input type="date" class="form-control" id="id_dtNasc" 
-							name="dtNasc" required>
+							<label for="id_dtNasc">Data Nascimento</label> <input type="date"
+								class="form-control" id="id_dtNasc"
+								value="${aluno.dtNascimento}" name="dtNasc" required>
+						</div>
+						<!-- if(${aluno.id} != null) -->
+						<c:if test="${aluno.id ne null}">
+							<input type="hidden" name="id" value="${aluno.id}">
+						</c:if>
+
+						<div class="form-group">
+							<label for="id_dtNasc" class="text-success">${msg}</label>
 						</div>
 						<button form="formulario" type="submit"
 							class="btn btn-primary pull-right">Enviar</button>
@@ -85,20 +95,25 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Teste</td>
-								<td>Teste</td>
-								<td>Teste</td>
-								<td>Teste</td>
-								<td><a href="#">
-									<span class="glyphicon glyphicon-pencil" 
-									aria-hidden="true"></span></a></td>
-								<td>
-									<a href="#">
-									<span class="glyphicon glyphicon-trash" 
-									aria-hidden="true"></span></a></td>
-							</tr>
+							<!-- for(Aluno a : lista) -->
+							<c:forEach var="aluno" items="${alunos}">
+								<tr>
+									<td>${aluno.nome}</td>
+									<td>${aluno.email}</td>
+									<td>${aluno.telefone}</td>
+									<td>${aluno.dtNascimento}</td>
+									<td><a href="buscar?id=${aluno.id}"> <span
+											class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+									<td><a href="excluir?id=${aluno.id}"> <span
+											class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+								</tr>
+							</c:forEach>
 						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="6" class="text-success text-center">${msgtab}</td>
+							</tr>
+						</tfoot>
 					</table>
 				</div>
 			</div>

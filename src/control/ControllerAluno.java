@@ -31,20 +31,32 @@ public class ControllerAluno extends HttpServlet {
 			// id, nome, email, vazio
 			if (request.getParameter("id") != null) {
 				a.setId(Long.parseLong(request.getParameter("id")));
-				response.getWriter().append(daoImp.buscar(a).toString());
+				//response.getWriter().append(daoImp.buscar(a).toString());
+				
+				request.setAttribute("aluno", daoImp.buscar(a));
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+				
 			} else if (request.getParameter("nome") != null) {
 				a.setNome(request.getParameter("nome"));
-				response.getWriter().append(daoImp.listar(a).toString());
+				//response.getWriter().append(daoImp.listar(a).toString());
+				request.setAttribute("alunos", daoImp.listar(a));
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			} else if (request.getParameter("email") != null) {
 				a.setEmail(request.getParameter("email"));
-				response.getWriter().append(daoImp.buscar(a).toString());
+				//response.getWriter().append(daoImp.buscar(a).toString());
+				request.setAttribute("aluno", daoImp.buscar(a));
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			} else {
-				response.getWriter().append(daoImp.listar(a).toString());
+				//response.getWriter().append(daoImp.listar(a).toString());
+				request.setAttribute("alunos", daoImp.listar(a));
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 		} else if (request.getServletPath().equals("/excluir")) {
 			a.setId(Long.parseLong(request.getParameter("id")));
 			if(daoImp.excluir(a))
 				response.getWriter().append("aluno excluido com sucesso!");
+			request.setAttribute("msgtab", " aluno excluido com sucesso!");
+			request.getRequestDispatcher("/buscar").forward(request, response);
 		} else {
 			response.sendRedirect("404.html");
 		}
@@ -69,10 +81,16 @@ public class ControllerAluno extends HttpServlet {
 
 				aluno.setId(Long.parseLong(request.getParameter("id")));
 				if(daoImp.editar(aluno))
-					response.getWriter().append(aluno.getNome()).append(" ").append("editado com sucesso.");
+					
+					request.setAttribute("msg", aluno.getNome() + " editado com sucesso.");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+					//response.getWriter().append(aluno.getNome()).append(" ").append("editado com sucesso.");
 			} else {
 				if(daoImp.cadastrar(aluno))
-					response.getWriter().append(aluno.getNome() + " cadastrado com sucesso.");
+					//response.getWriter().append(aluno.getNome() + " cadastrado com sucesso.");
+					
+					request.setAttribute("msg", aluno.getNome() + " cadastrado com sucesso.");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 		} else {
 			response.sendRedirect("404.html");
