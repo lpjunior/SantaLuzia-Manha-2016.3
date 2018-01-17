@@ -2,7 +2,8 @@
 <!-- conteudo -->
 <section id="galeria">
 	<div class="row">
-		<h3 style="margin-left: 1.5%">Veja nossos produtos principais</h3>
+		<h3 style="margin-left: 1.5%; margin-bottom: 1.5%">Veja nossos
+			produtos principais</h3>
 		<div class="col-md-3 col-xs-6">
 			<a href="#" class="thumbnail"> <img alt="100%x180"
 				data-src="holder.js/100%x180"
@@ -39,29 +40,6 @@
 	</div>
 </section>
 <section id="categoria">
-	<div class="row">
-		<h3 style="margin-left: 1.5%">Produto por categoria</h3>
-		<nav>
-			<ul>
-				<li>Eletronicos
-					<ul class="nav nav-pills">
-						<li><a href="#">Mixers</a></li>
-						<li><a href="#">Bebedouros</a></li>
-						<li><a href="#">Robôs aspiradores</a></li>
-						<li><a href="#">Máquinas de costura</a></li>
-					</ul>
-				</li>
-				<li>Informática
-					<ul class="nav nav-pills">
-						<li><a href="#">2 em 1</a></li>
-						<li><a href="#">Notebook Gamers</a></li>
-						<li><a href="#">Computadores e all in one</a></li>
-						<li><a href="#">Apple</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-	</div>
 </section>
 <!--#/conteudo -->
 <jsp:include page="footer.jsp" />
