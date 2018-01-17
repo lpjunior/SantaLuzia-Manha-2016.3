@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,7 +24,7 @@
     <![endif]-->
 </head>
 <body>
-
+	<!-- modal -->
 	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true"
 		style="display: none;">
@@ -32,18 +33,19 @@
 				<h1>Faça seu Login</h1>
 				<br>
 				<form action="login" method="post">
-					<input type="text" name="login" placeholder="Username"> <input
-						type="password" name="senha" placeholder="Password"> <input
-						type="submit" name="login" class="login loginmodal-submit"
+					<input type="text" name="login" placeholder="Username" required>
+					<input type="password" name="senha" placeholder="Password" required>
+					<input type="submit" name="login" class="login loginmodal-submit"
 						value="Login">
 				</form>
-
 				<div class="login-help">
 					<a href="#">Registro</a> - <a href="#">Esqueci minha senha</a>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- #/modal -->
+	
 	<div class="container">
 		<!-- barraDeNavegacao -->
 		<nav class="navbar navbar-default">
@@ -64,7 +66,7 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="home.jsp">Home <span class="sr-only">(current)</span></a></li>
 						<li><a href="#">Vitrine</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -89,13 +91,27 @@
 						<li><a href="#">Contato</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Entrar <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-								<li><a href="#">Cadastro</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#">Recuperar senha</a></li>
-							</ul></li>
+							aria-expanded="false">
+							<c:choose>
+								<c:when test="${usuario ne null}">${usuario.nome}
+									<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="perfil.jsp">Gerenciar Perfil</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="logout">Sair</a></li>
+									</ul>
+								</c:when>
+								<c:otherwise>Entrar
+									<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+										<li><a href="#">Cadastro</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Recuperar senha</a></li>
+									</ul>
+								</c:otherwise>
+							</c:choose>
+						</li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

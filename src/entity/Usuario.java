@@ -9,6 +9,7 @@ public class Usuario implements Serializable {
 	private Long id;
 	private String login;
 	private String senha;
+	private String nome;
 
 	public Usuario() {
 		// TODO Auto-generated constructor stub
@@ -36,6 +37,14 @@ public class Usuario implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	@Override
