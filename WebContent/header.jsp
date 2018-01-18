@@ -46,6 +46,29 @@
 	</div>
 	<!-- #/modal -->
 	
+	<!-- modal-cadastro -->
+	<div class="modal fade" id="cadastro-modal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true"
+		style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>Crie seu Login</h1>
+				<br>
+				<form action="sign_in" method="post">
+					<input type="text" name="nome" placeholder="Name" required>					
+					<input type="text" name="login" placeholder="Username" required>
+					<input type="password" id="pwd" name="senha" placeholder="Password" required>
+					<input type="password" id="confirm_pwd" name="confirmar_senha" placeholder="Rewrite Password" required>
+					<div id="msg"></div>
+					<input type="submit" name="login" class="login loginmodal-submit"
+						value="Login">
+				</form>
+
+			</div>
+		</div>
+	</div>
+	<!-- #/modal-cadastro -->
+	
 	<div class="container">
 		<!-- barraDeNavegacao -->
 		<nav class="navbar navbar-default">
@@ -105,7 +128,7 @@
 									<span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-										<li><a href="#">Cadastro</a></li>
+										<li><a href="#" data-toggle="modal" data-target="#cadastro-modal">Cadastro</a></li>
 										<li role="separator" class="divider"></li>
 										<li><a href="#">Recuperar senha</a></li>
 									</ul>

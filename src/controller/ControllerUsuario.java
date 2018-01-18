@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import entity.Usuario;
 
-@WebServlet({ "/login", "/logout", "/edit" })
+@WebServlet({ "/login", "/logout", "/edit", "/sign_in" })
 public class ControllerUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -43,7 +43,7 @@ public class ControllerUsuario extends HttpServlet {
 			u.setSenha(request.getParameter("senha"));
 			u.setNome("Luis");
 
-			if (u.getLogin().equals("lpjr") && u.getSenha().equals("123")) {
+			if (u.getLogin().equalsIgnoreCase("lpjr") && u.getSenha().equals("123")) {
 				session.setAttribute("usuario", u);
 				response.sendRedirect("home.jsp");
 			} else {
@@ -51,6 +51,8 @@ public class ControllerUsuario extends HttpServlet {
 			}
 		} else if (request.getServletPath().equals("/edit")) {
 			gerPerfil(request, response);
+		} else if (request.getServletPath().equals("/sign_in")) {
+			cadPerfil(request, response);
 		}
 	}
 
@@ -61,6 +63,19 @@ public class ControllerUsuario extends HttpServlet {
 
 		usuario.setNome(request.getParameter("nome"));
 		session.removeAttribute("usuario");
+		session.setAttribute("usuario", usuario);
+		response.sendRedirect("home.jsp");
+	}
+	
+	private void cadPerfil(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		Usuario usuario = new Usuario();
+
+		usuario.setNome(request.getParameter("nome"));
+		usuario.setLogin(request.getParameter("login"));
+		usuario.setSenha(request.getParameter("senha"));
+		
 		session.setAttribute("usuario", usuario);
 		response.sendRedirect("home.jsp");
 	}
