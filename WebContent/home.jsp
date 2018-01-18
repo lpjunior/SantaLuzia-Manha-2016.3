@@ -1,4 +1,3 @@
-<jsp:include page="header.jsp" />
 <!-- conteudo -->
 <section id="galeria">
 	<div class="row">
@@ -42,4 +41,3 @@
 <section id="categoria">
 </section>
 <!--#/conteudo -->
-<jsp:include page="footer.jsp" />
