@@ -45,7 +45,7 @@
 		</div>
 	</div>
 	<!-- #/modal -->
-	
+
 	<!-- modal-cadastro -->
 	<div class="modal fade" id="cadastro-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true"
@@ -63,7 +63,6 @@
 					<input type="submit" name="login" class="login loginmodal-submit"
 						value="Login">
 				</form>
-
 			</div>
 		</div>
 	</div>

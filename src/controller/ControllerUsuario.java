@@ -77,6 +77,14 @@ public class ControllerUsuario extends HttpServlet {
 		usuario.setSenha(request.getParameter("senha"));
 		
 		session.setAttribute("usuario", usuario);
+		session.setAttribute("msg", 
+				"$(function() {\r\n" + 
+				"	setTimeout(function() {\r\n" + 
+				"		$.bootstrapGrowl(\"<strong>Cadastro!</strong><br>Registro feito com sucesso.\", {\r\n" + 
+				"			type : 'success'\r\n" + 
+				"		});\r\n" + 
+				"	}, 0);\r\n" + 
+				"});");
 		response.sendRedirect("home.jsp");
 	}
 }

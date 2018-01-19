@@ -12,5 +12,8 @@
 	crossorigin="anonymous"></script>
 <script src="js/jquery.bootstrap-growl.min.js"></script>
 <script src="js/validation.js"></script>
+<script>
+	${msg}
+</script>
 </body>
 </html>

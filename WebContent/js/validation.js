@@ -9,15 +9,7 @@ $(function(){
 				password.setCustomValidity("Senhas nao conferem.");
 			} else {
 				password.setCustomValidity("");
-				$(function() {
-					setTimeout(function() {
-						$.bootstrapGrowl("<strong>Cadastro!</strong><br>Registro feito com sucesso.", {
-							type : 'success'
-						});
-					}, 1000);
-				});
 			}
-			
 		})
 	})
 });
