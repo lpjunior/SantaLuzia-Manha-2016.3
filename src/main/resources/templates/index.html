@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Loja Incomoda</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <section id="cadastro">
+		<div class="container">
+			<div class="center">
+				<h2>Cadastro</h2>
+				<p class="lead">Seja um de nosso cliente e desfrute dos melhores
+					equipamentos!</p>
+			</div>
+			<div class="rows">
+				<div class='col-md-offset-2 col-md-8'>
+					<form style='float: none; margin-left: auto; margin-right: auto;'
+						role=search method=POST action='Controle?acao=gravar'>
+						<div class='panel panel-success'>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="panel-heading">
+										<h3 class="panel-title">Usuário</h3>
+									</div>
+									<div class="panel-body">
+										<div class="form-group">
+											<label for="nome">Nome *</label> <input name="nome" id="nome"
+												class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="sobrenome">Sobrenome *</label> <input
+												name="sobrenome" id="sobrenome" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="sexo">Sexo *</label> <select name="sexo"
+												id="sexo" class="form-control">
+												<option value="m">Masculino</option>
+												<option value="f">Feminino</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="cpf">CPF *</label> <input name="cpf" id="cpf"
+												class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="email">E-mail *</label> <input name="email"
+												id="email" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="telefone">Telefone *</label> <input
+												name="telefone" id="telefone" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="senha">Senha *</label> <input name="senha"
+												id="senha" type="password" class="form-control">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="panel-heading">
+										<h3 class="panel-title">Endereço do usuário</h3>
+									</div>
+
+									<div class="panel-body">
+										<div class="form-group">
+											<label for="cep">CEP *</label>
+											<!-- <input type="text" name="cep" id="cep" class="form-control" value="${cep}"> -->
+											<input type="text" name="cep" id="cep" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="logradouro">Logradouro *</label>
+											<!-- <input name="logradouro" id="logradouro" class="form-control" value="${logradouro}"> -->
+											<input name="logradouro" id="logradouro" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="numero">Número *</label> <input name="numero"
+												id="numero" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="complemento">Complemento</label> <input
+												name="complemento" id="complemento" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="bairro">Bairro *</label>
+											<!-- <input name="bairro" id="bairro" class="form-control" value="${bairro}"> -->
+											<input name="bairro" id="bairro" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="cidade">Cidade *</label>
+											<!-- <input name="cidade" id="cidade" class="form-control" value="${cidade}"> -->
+											<input name="cidade" id="cidade" class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="estado">Estado *</label>
+											<!-- <input type="text" name="estado" id="estado" class="form-control" value="${estado}">-->
+											<input type="text" name="estado" id="estado"
+												class="form-control">
+										</div>
+										<div class="form-group">
+											<label for="pais">País *</label> <input name="pais" id="pais"
+												class="form-control">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<h4>* Campo obrigatório</h4>
+								</div>
+							</div>
+
+							<div class="panel-footer text-right">
+								<input type="submit" value="Cadastrar" class="btn btn-success">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Script de consulta dos correios -->
+    <script src="js/cep.js"></script>
+  </body>
+</html>
