@@ -1,7 +1,6 @@
 package com.senac.lojaincomoda.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 public class Categoria implements Serializable {
@@ -22,10 +23,11 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(nullable = false, length=150)
-	private String categoria;
+	private String nome;
 
+	@Autowired
 	@ManyToMany(mappedBy = "categorias")
-	private List<Produto> produtos = new ArrayList<Produto>();
+	private List<Produto> produtos;
 
 	public Categoria() {
 
@@ -40,11 +42,11 @@ public class Categoria implements Serializable {
 	}
 
 	public String getCategoria() {
-		return categoria;
+		return nome;
 	}
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setCategoria(String nome) {
+		this.nome = nome;
 	}
 
 	public List<Produto> getProdutos() {
