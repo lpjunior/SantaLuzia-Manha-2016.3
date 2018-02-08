@@ -6,9 +6,13 @@ import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Transient;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.senac.notasaluno.domain.enums.SituacaoAluno;
 
 @Entity
 public class Aluno extends Pessoa {
@@ -19,7 +23,8 @@ public class Aluno extends Pessoa {
 	@Column(unique=true, nullable=false)
 	private String email;
 	
-	private String situacao;
+	@Enumerated(EnumType.STRING)
+	private SituacaoAluno situacao;
 	
 	/**
 	 * @Autowired - Informa que o Spring irá gerenciar o instanciamento do objeto
@@ -39,11 +44,11 @@ public class Aluno extends Pessoa {
 		this.email = email;
 	}
 
-	public String getSituacao() {
+	public SituacaoAluno getSituacao() {
 		return situacao;
 	}
 
-	public void setSituacao(String situacao) {
+	public void setSituacao(SituacaoAluno situacao) {
 		this.situacao = situacao;
 	}
 

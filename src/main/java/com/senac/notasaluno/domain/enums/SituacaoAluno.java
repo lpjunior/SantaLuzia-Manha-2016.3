@@ -2,7 +2,7 @@ package com.senac.notasaluno.domain.enums;
 
 public enum SituacaoAluno {
 
-	ATIVO(1, "Aluno Ativo"), DESATIVADO(2, "Aluno Desativado");
+	ATIVO(1, "Aluno Ativo"), INATIVO(2, "Aluno Inativo");
 	
 	private int id;
 	private String descricao;
@@ -25,9 +25,9 @@ public enum SituacaoAluno {
 			return null;
 		}
 		
-		for(SituacaoAluno sc : SituacaoAluno.values()) {
-			if(id.equals(sc.getId())) {
-				return sc;
+		for(SituacaoAluno sa : SituacaoAluno.values()) {
+			if(id.equals(sa.getId())) {
+				return sa;
 			}
 		}
 		
