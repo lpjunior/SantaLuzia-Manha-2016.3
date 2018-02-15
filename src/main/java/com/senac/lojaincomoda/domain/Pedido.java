@@ -26,14 +26,14 @@ public class Pedido implements Serializable {
 	private Long id;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPedido;
-	@OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
-	private Pagamento pagamento;
-	@ManyToOne
-	@JoinColumn(name = "cliente_id")
-	private Cliente cliente;
-	@ManyToOne
-	@JoinColumn(name = "endereco_id")
-	private Endereco enderecoDeEntrega;
+//	@OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
+//	private Pagamento pagamento;
+//	@ManyToOne
+//	@JoinColumn(name = "cliente_id")
+//	private Cliente cliente;
+//	@ManyToOne
+//	@JoinColumn(name = "endereco_id")
+//	private Endereco enderecoDeEntrega;
 
 	public Long getId() {
 		return id;
@@ -51,29 +51,29 @@ public class Pedido implements Serializable {
 		this.dataPedido = dataPedido;
 	}
 
-	public Pagamento getPagamento() {
-		return pagamento;
-	}
-
-	public void setPagamento(Pagamento pagamento) {
-		this.pagamento = pagamento;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public Endereco getEnderecoDeEntrega() {
-		return enderecoDeEntrega;
-	}
-
-	public void setEnderecoDeEntrega(Endereco enderecoDeEntrega) {
-		this.enderecoDeEntrega = enderecoDeEntrega;
-	}
+//	public Pagamento getPagamento() {
+//		return pagamento;
+//	}
+//
+//	public void setPagamento(Pagamento pagamento) {
+//		this.pagamento = pagamento;
+//	}
+//
+//	public Cliente getCliente() {
+//		return cliente;
+//	}
+//
+//	public void setCliente(Cliente cliente) {
+//		this.cliente = cliente;
+//	}
+//
+//	public Endereco getEnderecoDeEntrega() {
+//		return enderecoDeEntrega;
+//	}
+//
+//	public void setEnderecoDeEntrega(Endereco enderecoDeEntrega) {
+//		this.enderecoDeEntrega = enderecoDeEntrega;
+//	}
 
 	@Override
 	public int hashCode() {

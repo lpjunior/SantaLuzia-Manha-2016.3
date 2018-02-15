@@ -7,7 +7,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-@Entity
+//@Entity
 public class PagamentoComBoleto extends Pagamento {
 
 	@Transient

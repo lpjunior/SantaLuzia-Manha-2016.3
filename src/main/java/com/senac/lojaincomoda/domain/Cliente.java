@@ -10,6 +10,7 @@ import javax.persistence.Transient;
 
 import com.senac.lojaincomoda.domain.enums.TipoCliente;
 
+//@Entity
 public class Cliente implements Serializable {
 
 	@Transient

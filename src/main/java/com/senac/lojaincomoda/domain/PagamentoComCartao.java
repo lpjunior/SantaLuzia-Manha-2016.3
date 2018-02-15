@@ -3,7 +3,7 @@ package com.senac.lojaincomoda.domain;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
-@Entity
+//@Entity
 public class PagamentoComCartao extends Pagamento {
 	
 	@Transient

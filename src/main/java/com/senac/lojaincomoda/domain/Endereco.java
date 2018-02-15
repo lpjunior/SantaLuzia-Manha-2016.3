@@ -2,7 +2,7 @@ package com.senac.lojaincomoda.domain;
 
 import javax.persistence.Entity;
 
-@Entity
+//@Entity
 public class Endereco {
 
 }
