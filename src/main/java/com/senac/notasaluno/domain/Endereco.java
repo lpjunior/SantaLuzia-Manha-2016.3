@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
@@ -31,8 +32,11 @@ public class Endereco implements Serializable {
 	private String cep;
 	
 	@OneToOne
+	@JoinColumn(name="cidade_id")
 	private Cidade cidade;
+	
 	@OneToOne
+	@JoinColumn(name="estado_id")
 	private Estado estado;
 
 	public Endereco() {
