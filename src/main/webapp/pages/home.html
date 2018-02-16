@@ -15,7 +15,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous" media="all">
-<link rel="stylesheet" href="css/estilo.css" media="all">
+<link rel="stylesheet" href="../css/estilo.css" media="all">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,9 +36,7 @@
 					<div class="row">
 						<div class="logo">
 							<figure>
-								<img alt=""
-									src="https://upload.wikimedia.org/wikipedia/commons/8/86/Senac_logo.svg"
-									width="200">
+								<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/8/86/Senac_logo.svg" width="200">
 							</figure>
 						</div>
 					</div>
@@ -50,39 +48,11 @@
 						</div>
 
 						<div class="panel-body">
-
-							<form name="form" id="form" action="acesso/login"
-								class="form-horizontal" method="POST">
-
-								<div class="input-group">
-									<span class="input-group-addon"><i
-										class="glyphicon glyphicon-user"></i></span> <input id="user"
-										type="text" class="form-control" name="usuario" value=""
-										placeholder="Informe o Usuário">
-								</div>
-
-								<div class="input-group">
-									<span class="input-group-addon"><i
-										class="glyphicon glyphicon-lock"></i></span> <input id="password"
-										type="password" class="form-control" name="senha"
-										placeholder="Informe a Senha">
-								</div>
-								<!-- 								<div th:if="${msg}"> -->
-								<!-- 									<div class="alert alert-success alert-dismissable" role="alert"> -->
-								<!-- 										<a class="panel-close close" data-dismiss="alert">x</a> <span -->
-								<!-- 											th:text="${msg}"></span> -->
-								<!-- 									</div> -->
-								<!-- 								</div> -->
-								<div class="form-group">
-									<!-- Button -->
-									<div class="col-sm-12 controls">
-										<button type="submit" href="#"
-											class="btn btn-primary pull-right">
-											<i class="glyphicon glyphicon-log-in"></i> Log in
-										</button>
-									</div>
-								</div>
-							</form>
+							<div class="text-center">
+								<h2>Bem Vindo ao Sistema de Notas</h2>
+								<button class="btn btn-primary">Acesse</button>
+							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -100,6 +70,6 @@
 		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		crossorigin="anonymous"></script>
 	<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="../js/main.js"></script>
 </body>
 </html>
